@@ -1,17 +1,15 @@
 package maximizehappinessofselectedchildren;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.IntStream;
 
 public class Solution {
     public long maximumHappinessSum(int[] happiness, int k) {
-        int[] sorted = IntStream.of(happiness).boxed().sorted(Collections.reverseOrder()).mapToInt(i -> i).toArray();
-
+        Arrays.sort(happiness);
         long maxHappiness = 0;
-        for (int i = 0; i < k; i++) {
-            if (sorted[i] - i >= 0) {
-                maxHappiness += sorted[i] - i;
-            }
+        for (int i = happiness.length - 1; i > happiness.length - 1 - k; i--) {
+            maxHappiness += Math.max(happiness[i] - (happiness.length - 1 - i), 0);
         }
         return maxHappiness;
     }
