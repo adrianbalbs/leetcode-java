@@ -26,9 +26,6 @@ public class Solution {
         }
         return x;
     }
-    boolean same(int a, int b) {
-        return find(a) == find(b);
-    }
 
     boolean union(int a, int b) {
         int s1 = find(a);
