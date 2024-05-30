@@ -16,7 +16,6 @@ class Solution {
         }
 
         // Then do a DFS cycle detection
-        // We need to intialise two sets, one for visited and another for detecting if we revisit a node on the stack
         int[] visited = new int[numCourses];
         for (int i = 0; i < numCourses; ++i) {
             if (!(dfs(i, visited))) {
