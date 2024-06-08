@@ -13,7 +13,7 @@ public class Solution {
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j < i; j++) {
                 if (wordSet.contains(s.substring(j + 1, i)) && valid[j]) {
-                    valid[i] = wordSet.contains(s.substring(j + 1, i)) && valid[j];
+                    valid[i] = true;
                 }
             }
         }
